@@ -1,0 +1,103 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              12/24/2019 16:43:36 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\keil\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main.ls
+                    -t) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include "Function_Init.h"
+   2          #include "SensorMethod.h"
+   3          
+   4          unsigned long int tk;
+   5          
+   6          void beep(void){
+   7   1          P1&=0xEF;
+   8   1      }
+   9          
+  10          void beepStop(void){
+  11   1          P1|=0x10;
+  12   1      }
+  13          
+  14          void LED1_ON(){
+  15   1          P0&=0xEF;
+  16   1      }
+  17          
+  18          void LED1_OFF(){
+  19   1          P0|=0x10;
+  20   1      }
+  21          
+  22          void LED2_ON(){
+  23   1          P5&=0xFD;
+  24   1      }
+  25          
+  26          void LED2_OFF(){
+  27   1          P5|=0x02;
+  28   1      }
+  29          
+  30          void LED3_ON(){
+  31   1          P1&=0x7F;
+  32   1      }
+  33          
+  34          void LED3_OFF(){
+  35   1          P1|=0x80;
+  36   1      }
+  37          
+  38          void main(void){
+  39   1          P0CON = 0xFF;
+  40   1          P0PH  = 0xFF;       
+  41   1          P1CON = 0xFF;
+  42   1          P1PH  = 0xFF;
+  43   1          P2CON = 0xFF;
+  44   1          P2PH  = 0xFF;
+  45   1          P5CON = 0xFF;
+  46   1          P5PH  = 0xFF;
+  47   1      
+  48   1          P0 = 0xFF;
+  49   1          P1 = 0xFF;
+  50   1          P5 = 0xFF;  
+  51   1              P2 = 0xFF;
+  52   1          EA = 1;
+  53   1          LED1_ON();
+  54   1          LED2_ON();
+C51 COMPILER V9.59.0.0   MAIN                                                              12/24/2019 16:43:36 PAGE 2   
+
+  55   1          LED3_ON();
+  56   1          TouchKeyInit();
+  57   1          while(1){
+  58   2              if(SOCAPI_TouchKeyStatus&0x80){
+  59   3                  SOCAPI_TouchKeyStatus&=0x80;
+  60   3                  tk = TouchKeyScan();
+  61   3                  if(tk){
+  62   4                      beep();
+  63   4                      LED1_OFF();
+  64   4                      LED2_OFF();
+  65   4                      LED3_OFF();
+  66   4                  }else{
+  67   4                      beepStop();
+  68   4                      LED1_ON();
+  69   4                      LED2_ON();
+  70   4                      LED3_ON();
+  71   4                  }
+  72   3                      
+  73   3                  
+  74   3                  TouchKeyRestart();
+  75   3              }
+  76   2          }
+  77   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    134    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

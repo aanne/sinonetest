@@ -1,0 +1,1357 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    12/24/2019  16:43:36  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\main.obj, .\Objects\S_TouchKeyCFG.obj, .\SC92F8X6XB_HighSensit
+>> ive_Lib_T1_V1.2.0.LIB TO .\Objects\test PRINT (.\Listings\test.m51) RAMSIZE (256) CODE (0X0100)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\main.obj (MAIN)
+  .\Objects\S_TouchKeyCFG.obj (S_TOUCHKEYCFG)
+  .\SC92F8X6XB_HighSensitive_Lib_T1_V1.2.0.LIB (SENSORMETHOD)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+  D:\KEIL\C51\LIB\C51S.LIB (?C?IMUL)
+  D:\KEIL\C51\LIB\C51S.LIB (?C?UIDIV)
+  D:\KEIL\C51\LIB\C51S.LIB (?C?IILDX)
+  D:\KEIL\C51\LIB\C51S.LIB (?C?LNOT)
+  D:\KEIL\C51\LIB\C51S.LIB (?C?ULCMP)
+  D:\KEIL\C51\LIB\C51S.LIB (?C?ULSHR)
+  D:\KEIL\C51\LIB\C51S.LIB (?C?LSHL)
+  D:\KEIL\C51\LIB\C51S.LIB (?C?OFFXADD)
+
+
+LINK MAP OF MODULE:  .\Objects\test (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0014H     UNIT         _DATA_GROUP_
+            DATA    001CH     0004H     UNIT         ?DT?MAIN
+            BIT     0020H.0   0000H.2   UNIT         ?BI?SENSORMETHOD
+            BIT     0020H.2   0000H.1   UNIT         _BIT_GROUP_
+                    0020H.3   0000H.5                *** GAP ***
+            DATA    0021H     0009H     UNIT         ?DT?SENSORMETHOD
+            IDATA   002AH     0001H     UNIT         ?STACK
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+            XDATA   0000H     0062H     UNIT         ?XD?S_TOUCHKEYCFG
+            XDATA   0062H     0009H     UNIT         ?XD?SENSORMETHOD
+            XDATA   006BH     0001H     UNIT         _XDATA_GROUP_
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0058H                  *** GAP ***
+            CODE    005BH     0003H     ABSOLUTE     
+                    005EH     00A2H                  *** GAP ***
+            CODE    0100H     03A8H     UNIT         ?PR?_SENSORRENOVATE?SENSORMETHOD
+            CODE    04A8H     0130H     UNIT         ?PR?TOUCHKEYSCAN?S_TOUCHKEYCFG
+            CODE    05D8H     011FH     UNIT         ?PR?_MULTIPLEDEAL?SENSORMETHOD
+            CODE    06F7H     011FH     UNIT         ?PR?SENSORMETHOD
+            CODE    0816H     00CDH     UNIT         ?C?LIB_CODE
+            CODE    08E3H     00BBH     UNIT         ?PR?_FILTERDATADEAL?SENSORMETHOD
+            CODE    099EH     008CH     UNIT         ?C_C51STARTUP
+            CODE    0A2AH     007FH     UNIT         ?PR?_ICHAADJUST?SENSORMETHOD
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 2
+
+
+            CODE    0AA9H     007AH     UNIT         ?PR?TOUCHKEY_SERVICE?SENSORMETHOD
+            CODE    0B23H     0078H     UNIT         ?PR?TOUCHKEYINIT?SENSORMETHOD
+            CODE    0B9BH     0060H     UNIT         ?PR?MAIN?MAIN
+            CODE    0BFBH     0058H     UNIT         ?PR?FILTERAVERGEDEAL?SENSORMETHOD
+            CODE    0C53H     0054H     UNIT         ?PR?CURRENTSENSORCHOOSE?S_TOUCHKEYCFG
+            CODE    0CA7H     0052H     UNIT         ?CO?S_TOUCHKEYCFG
+            CODE    0CF9H     004CH     UNIT         ?PR?INITIALIZESENSORFLAG?SENSORMETHOD
+            CODE    0D45H     0047H     UNIT         ?PR?TOUCHKEYCFGINIT?S_TOUCHKEYCFG
+            CODE    0D8CH     003BH     UNIT         ?PR?CTK_ISR?S_TOUCHKEYCFG
+            CODE    0DC7H     002DH     UNIT         ?PR?_GETCFGMSG?S_TOUCHKEYCFG
+            CODE    0DF4H     002CH     UNIT         ?PR?_GETCURRFINGERVALUE?S_TOUCHKEYCFG
+            CODE    0E20H     0025H     UNIT         ?PR?FILTERCOMMCODE?SENSORMETHOD
+            CODE    0E45H     0025H     UNIT         ?PR?SENSORKEYFLAG?SENSORMETHOD
+            CODE    0E6AH     0024H     UNIT         ?PR?INITIALIZEBASELINES?SENSORMETHOD
+            CODE    0E8EH     0021H     UNIT         ?PR?FILTERIIRINIT?SENSORMETHOD
+            CODE    0EAFH     0015H     UNIT         ?PR?_GETTKYZTHRESHOLD?S_TOUCHKEYCFG
+            CODE    0EC4H     0012H     UNIT         ?PR?_GETSCANTIMEVALUE?S_TOUCHKEYCFG
+            CODE    0ED6H     000DH     UNIT         ?PR?_GETBASELINEADJUSTVALUE?S_TOUCHKEYCFG
+            CODE    0EE3H     000CH     UNIT         ?PR?_USDELAY?SENSORMETHOD
+            CODE    0EEFH     000BH     UNIT         ?PR?SETONEKEYPUSHRESETTIME?S_TOUCHKEYCFG
+            CODE    0EFAH     000BH     UNIT         ?PR?GETBASELINEUPDATETHRESHOLD?S_TOUCHKEYCFG
+            CODE    0F05H     000AH     UNIT         ?PR?LED3_ON?MAIN
+            CODE    0F0FH     000AH     UNIT         ?PR?GETTKYZCNT?S_TOUCHKEYCFG
+            CODE    0F19H     0009H     UNIT         ?C_INITSEG
+            CODE    0F22H     0008H     UNIT         ?PR?GETINITAUTOUPDATETIME?S_TOUCHKEYCFG
+            CODE    0F2AH     0008H     UNIT         ?PR?ISDOUBLEKEYORSLIDEKEY?S_TOUCHKEYCFG
+            CODE    0F32H     0008H     UNIT         ?PR?GETUPCONFIRMCNT?S_TOUCHKEYCFG
+            CODE    0F3AH     0004H     UNIT         ?PR?BEEP?MAIN
+            CODE    0F3EH     0004H     UNIT         ?PR?BEEPSTOP?MAIN
+            CODE    0F42H     0004H     UNIT         ?PR?LED1_ON?MAIN
+            CODE    0F46H     0004H     UNIT         ?PR?LED1_OFF?MAIN
+            CODE    0F4AH     0004H     UNIT         ?PR?LED2_ON?MAIN
+            CODE    0F4EH     0004H     UNIT         ?PR?LED2_OFF?MAIN
+            CODE    0F52H     0004H     UNIT         ?PR?LED3_OFF?MAIN
+            CODE    0F56H     0003H     UNIT         ?PR?GETCSFUNCTION?S_TOUCHKEYCFG
+            CODE    0F59H     0003H     UNIT         ?PR?TOUCHKEYRESTART?SENSORMETHOD
+            CODE    0F5CH     0003H     UNIT         ?PR?GETISNEEDUPDATEBASELINE?SENSORMETHOD
+            CODE    0F5FH     0003H     UNIT         ?PR?SETNEEDUPDATEBASELINE?SENSORMETHOD
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\test (?C_STARTUP)
+
+
+SEGMENT                                             BIT_GROUP          DATA_GROUP          XDATA_GROUP
+  +--> CALLED SEGMENT                            START    LENGTH     START    LENGTH     START    LENGTH
+--------------------------------------------------------------------------------------------------------
+?C_C51STARTUP                                    -----    -----      -----    -----      -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                                    -----    -----      -----    -----      -----    -----
+  +--> ?PR?LED3_ON?MAIN
+  +--> ?PR?TOUCHKEYINIT?SENSORMETHOD
+  +--> ?PR?TOUCHKEYSCAN?S_TOUCHKEYCFG
+  +--> ?PR?BEEP?MAIN
+  +--> ?PR?LED1_OFF?MAIN
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 3
+
+
+  +--> ?PR?LED2_OFF?MAIN
+  +--> ?PR?LED3_OFF?MAIN
+  +--> ?PR?BEEPSTOP?MAIN
+  +--> ?PR?TOUCHKEYRESTART?SENSORMETHOD
+
+?PR?LED3_ON?MAIN                                 -----    -----      -----    -----      -----    -----
+  +--> ?PR?LED1_ON?MAIN
+  +--> ?PR?LED2_ON?MAIN
+
+?PR?TOUCHKEYINIT?SENSORMETHOD                    -----    -----      -----    -----      -----    -----
+  +--> ?PR?TOUCHKEYCFGINIT?S_TOUCHKEYCFG
+  +--> ?PR?_GETCFGMSG?S_TOUCHKEYCFG
+  +--> ?PR?_GETSCANTIMEVALUE?S_TOUCHKEYCFG
+  +--> ?PR?SENSORMETHOD
+  +--> ?PR?INITIALIZESENSORFLAG?SENSORMETHOD
+  +--> ?PR?FILTERAVERGEDEAL?SENSORMETHOD
+  +--> ?PR?INITIALIZEBASELINES?SENSORMETHOD
+
+?PR?TOUCHKEYCFGINIT?S_TOUCHKEYCFG                -----    -----      -----    -----      -----    -----
+  +--> ?CO?S_TOUCHKEYCFG
+  +--> ?PR?CURRENTSENSORCHOOSE?S_TOUCHKEYCFG
+
+?PR?CURRENTSENSORCHOOSE?S_TOUCHKEYCFG            -----    -----      0008H    0004H      -----    -----
+
+?PR?_GETCFGMSG?S_TOUCHKEYCFG                     -----    -----      -----    -----      -----    -----
+  +--> ?CO?S_TOUCHKEYCFG
+
+?PR?_GETSCANTIMEVALUE?S_TOUCHKEYCFG              -----    -----      -----    -----      -----    -----
+  +--> ?CO?S_TOUCHKEYCFG
+
+?PR?INITIALIZESENSORFLAG?SENSORMETHOD            -----    -----      -----    -----      -----    -----
+  +--> ?PR?SENSORMETHOD
+
+?PR?FILTERAVERGEDEAL?SENSORMETHOD                -----    -----      0008H    0002H      -----    -----
+  +--> ?PR?FILTERCOMMCODE?SENSORMETHOD
+  +--> ?PR?SENSORMETHOD
+  +--> ?PR?_ICHAADJUST?SENSORMETHOD
+  +--> ?PR?FILTERIIRINIT?SENSORMETHOD
+  +--> ?PR?GETINITAUTOUPDATETIME?S_TOUCHKEYCFG
+  +--> ?PR?_FILTERDATADEAL?SENSORMETHOD
+
+?PR?FILTERCOMMCODE?SENSORMETHOD                  -----    -----      -----    -----      -----    -----
+  +--> ?PR?_USDELAY?SENSORMETHOD
+
+?PR?_ICHAADJUST?SENSORMETHOD                     -----    -----      001BH    0001H      006BH    0001H
+  +--> ?PR?_GETBASELINEADJUSTVALUE?S_TOUCHKE...
+  +--> ?PR?_GETSCANTIMEVALUE?S_TOUCHKEYCFG
+  +--> ?PR?SENSORMETHOD
+
+?PR?FILTERIIRINIT?SENSORMETHOD                   -----    -----      -----    -----      -----    -----
+  +--> ?PR?SENSORMETHOD
+
+?PR?GETINITAUTOUPDATETIME?S_TOUCHKEYCFG          -----    -----      -----    -----      -----    -----
+  +--> ?CO?S_TOUCHKEYCFG
+
+?PR?_FILTERDATADEAL?SENSORMETHOD                 -----    -----      0013H    0003H      -----    -----
+  +--> ?PR?SENSORMETHOD
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 4
+
+
+  +--> ?PR?_GETCURRFINGERVALUE?S_TOUCHKEYCFG
+
+?PR?_GETCURRFINGERVALUE?S_TOUCHKEYCFG            -----    -----      -----    -----      -----    -----
+  +--> ?CO?S_TOUCHKEYCFG
+
+?PR?INITIALIZEBASELINES?SENSORMETHOD             -----    -----      -----    -----      -----    -----
+  +--> ?PR?SENSORMETHOD
+
+?PR?TOUCHKEYSCAN?S_TOUCHKEYCFG                   -----    -----      0008H    0009H      -----    -----
+  +--> ?PR?GETISNEEDUPDATEBASELINE?SENSORMETHOD
+  +--> ?PR?SENSORKEYFLAG?SENSORMETHOD
+  +--> ?PR?SETNEEDUPDATEBASELINE?SENSORMETHOD
+  +--> ?PR?ISDOUBLEKEYORSLIDEKEY?S_TOUCHKEYCFG
+  +--> ?PR?SETONEKEYPUSHRESETTIME?S_TOUCHKEYCFG
+  +--> ?CO?S_TOUCHKEYCFG
+  +--> ?PR?_MULTIPLEDEAL?SENSORMETHOD
+
+?PR?SENSORKEYFLAG?SENSORMETHOD                   -----    -----      0011H    0001H      -----    -----
+  +--> ?PR?_FILTERDATADEAL?SENSORMETHOD
+  +--> ?PR?_SENSORRENOVATE?SENSORMETHOD
+
+?PR?_SENSORRENOVATE?SENSORMETHOD                 -----    -----      0012H    0009H      -----    -----
+  +--> ?PR?SENSORMETHOD
+  +--> ?PR?_GETCURRFINGERVALUE?S_TOUCHKEYCFG
+  +--> ?PR?GETCSFUNCTION?S_TOUCHKEYCFG
+  +--> ?PR?ISDOUBLEKEYORSLIDEKEY?S_TOUCHKEYCFG
+  +--> ?PR?GETTKYZCNT?S_TOUCHKEYCFG
+  +--> ?PR?_GETTKYZTHRESHOLD?S_TOUCHKEYCFG
+  +--> ?PR?GETBASELINEUPDATETHRESHOLD?S_TOUC...
+  +--> ?PR?GETUPCONFIRMCNT?S_TOUCHKEYCFG
+  +--> ?PR?_ICHAADJUST?SENSORMETHOD
+
+?PR?ISDOUBLEKEYORSLIDEKEY?S_TOUCHKEYCFG          -----    -----      -----    -----      -----    -----
+  +--> ?CO?S_TOUCHKEYCFG
+
+?PR?_GETTKYZTHRESHOLD?S_TOUCHKEYCFG              -----    -----      -----    -----      -----    -----
+  +--> ?PR?_GETCURRFINGERVALUE?S_TOUCHKEYCFG
+
+?PR?GETBASELINEUPDATETHRESHOLD?S_TOUC...         -----    -----      -----    -----      -----    -----
+  +--> ?CO?S_TOUCHKEYCFG
+
+?PR?SETONEKEYPUSHRESETTIME?S_TOUCHKEYCFG         -----    -----      -----    -----      -----    -----
+  +--> ?CO?S_TOUCHKEYCFG
+
+?PR?_MULTIPLEDEAL?SENSORMETHOD                   -----    -----      0011H    0002H      -----    -----
+  +--> ?PR?SENSORMETHOD
+  +--> ?PR?INITIALIZESENSORFLAG?SENSORMETHOD
+  +--> ?PR?FILTERIIRINIT?SENSORMETHOD
+  +--> ?PR?_FILTERDATADEAL?SENSORMETHOD
+  +--> ?PR?INITIALIZEBASELINES?SENSORMETHOD
+
+*** NEW ROOT ***************************************************
+
+?PR?CTK_ISR?S_TOUCHKEYCFG                        -----    -----      -----    -----      -----    -----
+  +--> ?PR?TOUCHKEY_SERVICE?SENSORMETHOD
+
+?PR?TOUCHKEY_SERVICE?SENSORMETHOD                0020H.2  0000H.1    -----    -----      -----    -----
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 5
+
+
+  +--> ?PR?SENSORMETHOD
+  +--> ?PR?_GETCFGMSG?S_TOUCHKEYCFG
+  +--> ?PR?_GETSCANTIMEVALUE?S_TOUCHKEYCFG
+  +--> ?PR?_GETBASELINEADJUSTVALUE?S_TOUCHKE...
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\test (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:099EH         SEGMENT       ?C_C51STARTUP
+  I:002AH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:09A1H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:099EH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:099EH         LINE#         133
+  C:09A0H         LINE#         134
+  C:09A1H         LINE#         135
+  C:09A2H         LINE#         136
+  C:09A4H         LINE#         185
+  C:09A7H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:0F42H         PUBLIC        LED1_ON
+  D:00D8H         PUBLIC        P5
+  C:0F4AH         PUBLIC        LED2_ON
+  B:00A8H.7       PUBLIC        EA
+  C:0F0BH         PUBLIC        LED3_ON
+  D:00A8H         PUBLIC        IE
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 6
+
+
+  D:009BH         PUBLIC        P0PH
+  D:00B8H         PUBLIC        IP
+  D:0092H         PUBLIC        P1PH
+  D:00A2H         PUBLIC        P2PH
+  C:0F3AH         PUBLIC        beep
+  D:00DAH         PUBLIC        P5PH
+  C:0B9BH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0F46H         PUBLIC        LED1_OFF
+  C:0F4EH         PUBLIC        LED2_OFF
+  C:0F52H         PUBLIC        LED3_OFF
+  C:0F3EH         PUBLIC        beepStop
+  D:001CH         PUBLIC        tk
+  D:009AH         PUBLIC        P0CON
+  D:0091H         PUBLIC        P1CON
+  D:00A1H         PUBLIC        P2CON
+  D:00D9H         PUBLIC        P5CON
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          BEEP
+  C:0F3AH         LINE#         6
+  C:0F3AH         LINE#         7
+  C:0F3DH         LINE#         8
+  -------         ENDPROC       BEEP
+  -------         PROC          BEEPSTOP
+  C:0F3EH         LINE#         10
+  C:0F3EH         LINE#         11
+  C:0F41H         LINE#         12
+  -------         ENDPROC       BEEPSTOP
+  -------         PROC          LED1_ON
+  C:0F42H         LINE#         14
+  C:0F42H         LINE#         15
+  C:0F45H         LINE#         16
+  -------         ENDPROC       LED1_ON
+  -------         PROC          LED1_OFF
+  C:0F46H         LINE#         18
+  C:0F46H         LINE#         19
+  C:0F49H         LINE#         20
+  -------         ENDPROC       LED1_OFF
+  -------         PROC          LED2_ON
+  C:0F4AH         LINE#         22
+  C:0F4AH         LINE#         23
+  C:0F4DH         LINE#         24
+  -------         ENDPROC       LED2_ON
+  -------         PROC          LED2_OFF
+  C:0F4EH         LINE#         26
+  C:0F4EH         LINE#         27
+  C:0F51H         LINE#         28
+  -------         ENDPROC       LED2_OFF
+  -------         PROC          L?0015
+  -------         ENDPROC       L?0015
+  -------         PROC          LED3_ON
+  C:0F0BH         LINE#         30
+  C:0F0BH         LINE#         31
+  C:0F0EH         LINE#         32
+  -------         ENDPROC       LED3_ON
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 7
+
+
+  -------         PROC          LED3_OFF
+  C:0F52H         LINE#         34
+  C:0F52H         LINE#         35
+  C:0F55H         LINE#         36
+  -------         ENDPROC       LED3_OFF
+  -------         PROC          MAIN
+  C:0B9BH         LINE#         38
+  C:0B9BH         LINE#         39
+  C:0B9EH         LINE#         40
+  C:0BA1H         LINE#         41
+  C:0BA4H         LINE#         42
+  C:0BA7H         LINE#         43
+  C:0BAAH         LINE#         44
+  C:0BADH         LINE#         45
+  C:0BB0H         LINE#         46
+  C:0BB3H         LINE#         48
+  C:0BB6H         LINE#         49
+  C:0BB9H         LINE#         50
+  C:0BBCH         LINE#         51
+  C:0BBFH         LINE#         52
+  C:0BC1H         LINE#         53
+  C:0BC1H         LINE#         54
+  C:0BC1H         LINE#         55
+  C:0BC4H         LINE#         56
+  C:0BC7H         LINE#         57
+  C:0BC7H         LINE#         58
+  C:0BCEH         LINE#         59
+  C:0BD1H         LINE#         60
+  C:0BDCH         LINE#         61
+  C:0BE2H         LINE#         62
+  C:0BE5H         LINE#         63
+  C:0BE8H         LINE#         64
+  C:0BEBH         LINE#         65
+  C:0BEEH         LINE#         66
+  C:0BF0H         LINE#         67
+  C:0BF3H         LINE#         68
+  C:0BF3H         LINE#         69
+  C:0BF3H         LINE#         70
+  C:0BF6H         LINE#         71
+  C:0BF6H         LINE#         74
+  C:0BF9H         LINE#         75
+  C:0BF9H         LINE#         76
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        S_TOUCHKEYCFG
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  X:0000H         PUBLIC        ConfirmTouchCnt
+  X:0001H         PUBLIC        BaseLine
+  C:0D45H         PUBLIC        TouchKeyCFGInit
+  C:0ED6H         PUBLIC        _GetBaseLineAdjustValue
+  X:000DH         PUBLIC        FloatAreaCnt
+  B:00D0H.7       PUBLIC        TK_CY
+  C:0DF4H         PUBLIC        _GetCurrFingerValue
+  C:0F56H         PUBLIC        GetCsFunction
+  X:0013H         PUBLIC        CurrentChannel
+  X:0019H         PUBLIC        RawData
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 8
+
+
+  C:0F2AH         PUBLIC        IsDoubleKeyOrSlideKey
+  X:0025H         PUBLIC        TouchCnt
+  C:0D8CH         PUBLIC        CTK_ISR
+  X:002BH         PUBLIC        LowFingerDataCnt
+  C:04A8H         PUBLIC        TouchKeyScan
+  C:0EEFH         PUBLIC        SetOneKeyPushResetTime
+  C:0EC4H         PUBLIC        _GetScanTimeValue
+  C:0F0FH         PUBLIC        GetTKYzCnt
+  X:0031H         PUBLIC        DifferAccum
+  X:003DH         PUBLIC        RestAreaCnt
+  C:0EAFH         PUBLIC        _GetTKYzThreshold
+  X:0043H         PUBLIC        BaseLineAdjusttmp
+  C:0C53H         PUBLIC        CurrentSensorChoose
+  C:0F22H         PUBLIC        GetInitAutoUpdateTime
+  X:0049H         PUBLIC        MultipleLNum
+  C:0DC7H         PUBLIC        _GetCfgMsg
+  X:004BH         PUBLIC        SOCAPI_TouchKeyStatus
+  C:0F32H         PUBLIC        GetUpConfirmCnt
+  X:004CH         PUBLIC        UpdateBaseLNum
+  X:004EH         PUBLIC        SetNoiseThreshold
+  C:0EFAH         PUBLIC        GetBaselineUpdateThreshold
+  X:004FH         PUBLIC        FilterData
+  X:005BH         PUBLIC        NoTouchCnt
+  X:0061H         PUBLIC        MultipleDealTpye
+  C:0CC9H         PUBLIC        TKChannelCfg
+  C:0CA7H         PUBLIC        TKCFG
+  D:00D0H         PUBLIC        TK_PSW
+  -------         PROC          SETONEKEYPUSHRESETTIME
+  C:0EEFH         LINE#         96
+  C:0EEFH         LINE#         97
+  C:0EEFH         LINE#         98
+  C:0EF9H         LINE#         99
+  -------         ENDPROC       SETONEKEYPUSHRESETTIME
+  -------         PROC          GETBASELINEUPDATETHRESHOLD
+  C:0EFAH         LINE#         107
+  C:0EFAH         LINE#         108
+  C:0EFAH         LINE#         109
+  C:0F04H         LINE#         110
+  -------         ENDPROC       GETBASELINEUPDATETHRESHOLD
+  -------         PROC          GETINITAUTOUPDATETIME
+  C:0F22H         LINE#         119
+  C:0F22H         LINE#         120
+  C:0F22H         LINE#         121
+  C:0F29H         LINE#         122
+  -------         ENDPROC       GETINITAUTOUPDATETIME
+  -------         PROC          GETCSFUNCTION
+  C:0F56H         LINE#         130
+  C:0F56H         LINE#         131
+  C:0F56H         LINE#         132
+  C:0F58H         LINE#         133
+  -------         ENDPROC       GETCSFUNCTION
+  -------         PROC          _GETCURRFINGERVALUE
+  D:0005H         SYMBOL        i
+  C:0DF4H         LINE#         141
+  C:0DF6H         LINE#         142
+  C:0DF6H         LINE#         143
+  C:0E1FH         LINE#         144
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 9
+
+
+  -------         ENDPROC       _GETCURRFINGERVALUE
+  -------         PROC          _GETSCANTIMEVALUE
+  D:0007H         SYMBOL        i
+  C:0EC4H         LINE#         153
+  C:0EC4H         LINE#         154
+  C:0EC4H         LINE#         155
+  C:0ED5H         LINE#         156
+  -------         ENDPROC       _GETSCANTIMEVALUE
+  -------         PROC          ISDOUBLEKEYORSLIDEKEY
+  C:0F2AH         LINE#         164
+  C:0F2AH         LINE#         165
+  C:0F2AH         LINE#         166
+  C:0F31H         LINE#         167
+  -------         ENDPROC       ISDOUBLEKEYORSLIDEKEY
+  -------         PROC          _GETBASELINEADJUSTVALUE
+  D:0007H         SYMBOL        i
+  C:0ED6H         LINE#         176
+  C:0ED6H         LINE#         177
+  C:0ED6H         LINE#         178
+  C:0EE2H         LINE#         179
+  -------         ENDPROC       _GETBASELINEADJUSTVALUE
+  -------         PROC          GETUPCONFIRMCNT
+  C:0F32H         LINE#         187
+  C:0F32H         LINE#         188
+  C:0F32H         LINE#         189
+  C:0F39H         LINE#         190
+  -------         ENDPROC       GETUPCONFIRMCNT
+  -------         PROC          GETTKYZCNT
+  C:0F0FH         LINE#         199
+  C:0F0FH         LINE#         200
+  C:0F0FH         LINE#         201
+  C:0F18H         LINE#         202
+  -------         ENDPROC       GETTKYZCNT
+  -------         PROC          _GETTKYZTHRESHOLD
+  D:0007H         SYMBOL        i
+  -------         DO            
+  D:0006H         SYMBOL        SetFingerThresholdtmp
+  -------         ENDDO         
+  C:0EAFH         LINE#         211
+  C:0EAFH         LINE#         212
+  C:0EAFH         LINE#         215
+  C:0EB2H         LINE#         216
+  -------         ENDPROC       _GETTKYZTHRESHOLD
+  -------         PROC          CURRENTSENSORCHOOSE
+  -------         DO            
+  D:0003H         SYMBOL        i
+  D:0002H         SYMBOL        Ctk_Channel_mark
+  D:0008H         SYMBOL        CurrentSensorKey
+  -------         ENDDO         
+  C:0C53H         LINE#         227
+  C:0C53H         LINE#         228
+  C:0C53H         LINE#         229
+  C:0C55H         LINE#         230
+  C:0C56H         LINE#         231
+  C:0C5EH         LINE#         233
+  C:0C68H         LINE#         235
+  C:0C72H         LINE#         236
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 10
+
+
+  C:0C72H         LINE#         237
+  C:0C87H         LINE#         238
+  C:0C8AH         LINE#         239
+  C:0C8AH         LINE#         240
+  C:0C96H         LINE#         241
+  C:0C97H         LINE#         242
+  C:0CA1H         LINE#         243
+  C:0CA1H         LINE#         244
+  C:0CA1H         LINE#         245
+  C:0CA4H         LINE#         246
+  C:0CA6H         LINE#         247
+  -------         ENDPROC       CURRENTSENSORCHOOSE
+  -------         PROC          _GETCFGMSG
+  D:0007H         SYMBOL        i
+  C:0DC7H         LINE#         256
+  C:0DC7H         LINE#         257
+  C:0DC7H         LINE#         258
+  C:0DD8H         LINE#         259
+  C:0DD8H         LINE#         260
+  C:0DDDH         LINE#         261
+  C:0DE2H         LINE#         262
+  C:0DE5H         LINE#         263
+  C:0DE9H         LINE#         264
+  C:0DF1H         LINE#         265
+  C:0DF3H         LINE#         266
+  C:0DF3H         LINE#         267
+  -------         ENDPROC       _GETCFGMSG
+  -------         PROC          TOUCHKEYCFGINIT
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0D45H         LINE#         276
+  C:0D45H         LINE#         277
+  C:0D45H         LINE#         279
+  C:0D4FH         LINE#         280
+  C:0D59H         LINE#         281
+  C:0D5CH         LINE#         282
+  C:0D64H         LINE#         283
+  C:0D64H         LINE#         284
+  C:0D81H         LINE#         285
+  C:0D84H         LINE#         286
+  C:0D8BH         LINE#         287
+  -------         ENDPROC       TOUCHKEYCFGINIT
+  -------         PROC          TOUCHKEYSCAN
+  -------         DO            
+  D:0003H         SYMBOL        t
+  D:0008H         SYMBOL        MultipleCnt
+  D:0009H         SYMBOL        Keyvalue
+  D:000DH         SYMBOL        KeyData
+  -------         ENDDO         
+  C:04A8H         LINE#         299
+  C:04A8H         LINE#         300
+  C:04A8H         LINE#         302
+  C:04ABH         LINE#         303
+  C:04B3H         LINE#         304
+  C:04BBH         LINE#         306
+  C:04C3H         LINE#         307
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 11
+
+
+  C:04C3H         LINE#         308
+  C:04CEH         LINE#         309
+  C:04D6H         LINE#         310
+  C:04D6H         LINE#         311
+  C:04EBH         LINE#         312
+  C:04EEH         LINE#         313
+  C:04EEH         LINE#         314
+  C:0518H         LINE#         315
+  C:051AH         LINE#         316
+  C:051AH         LINE#         317
+  C:051DH         LINE#         318
+  C:052BH         LINE#         319
+  C:052BH         LINE#         320
+  C:052DH         LINE#         321
+  C:0536H         LINE#         322
+  C:0536H         LINE#         323
+  C:0539H         LINE#         324
+  C:053BH         LINE#         326
+  C:053BH         LINE#         327
+  C:0541H         LINE#         328
+  C:0541H         LINE#         329
+  C:0543H         LINE#         330
+  C:0543H         LINE#         331
+  C:0543H         LINE#         332
+  C:0543H         LINE#         334
+  C:0546H         LINE#         335
+  C:0546H         LINE#         336
+  C:0559H         LINE#         337
+  C:0559H         LINE#         338
+  C:0567H         LINE#         339
+  C:0569H         LINE#         341
+  C:0569H         LINE#         342
+  C:0570H         LINE#         343
+  C:0570H         LINE#         344
+  C:0572H         LINE#         346
+  C:0572H         LINE#         348
+  C:0580H         LINE#         349
+  C:0589H         LINE#         350
+  C:0589H         LINE#         352
+  C:0599H         LINE#         353
+  C:0599H         LINE#         354
+  C:059CH         LINE#         355
+  C:05A3H         LINE#         356
+  C:05A3H         LINE#         358
+  C:05B2H         LINE#         359
+  C:05B2H         LINE#         360
+  C:05B5H         LINE#         361
+  C:05BBH         LINE#         362
+  C:05C2H         LINE#         363
+  C:05C2H         LINE#         364
+  C:05C4H         LINE#         366
+  C:05C4H         LINE#         367
+  C:05CFH         LINE#         368
+  C:05CFH         LINE#         370
+  C:05D7H         LINE#         371
+  -------         ENDPROC       TOUCHKEYSCAN
+  -------         PROC          CTK_ISR
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 12
+
+
+  C:0D8CH         LINE#         380
+  C:0DA9H         LINE#         382
+  C:0DACH         LINE#         383
+  -------         ENDPROC       CTK_ISR
+  -------         ENDMOD        S_TOUCHKEYCFG
+
+  -------         MODULE        SENSORMETHOD
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00FFH         PUBLIC        OPREG
+  X:0063H         PUBLIC        FlowFingerRoundIndex
+  C:0A2AH         PUBLIC        _ICHAAdjust
+  D:00CFH         PUBLIC        TK_WDTCR
+  B:00A8H.7       PUBLIC        TK_EA
+  D:00E4H         PUBLIC        TKCNT
+  D:00A8H         PUBLIC        TK_IE
+  D:00FEH         PUBLIC        OPINX
+  C:0CF9H         PUBLIC        InitializeSensorFlag
+  X:0064H         PUBLIC        ScanTime
+  C:0F59H         PUBLIC        TouchKeyRestart
+  D:00E1H         PUBLIC        TKCFG0
+  D:00E2H         PUBLIC        TKCFG1
+  D:00E3H         PUBLIC        TKCFG2
+  C:0E45H         PUBLIC        SensorKeyFlag
+  D:0021H         PUBLIC        KeyFlag
+  X:0066H         PUBLIC        FlowFingerRoundCnt
+  B:0020H.0       PUBLIC        bMultiple
+  D:00E8H         PUBLIC        TKCR
+  C:0E6AH         PUBLIC        InitializeBaselines
+  B:00E8H.6       PUBLIC        TRIG
+  D:0025H         PUBLIC        KeyMark
+  C:0F5FH         PUBLIC        SetNeedUpdateBaseline
+  D:00A9H         PUBLIC        TK_IE1
+  C:0BFBH         PUBLIC        FilterAvergeDeal
+  D:00E6H         PUBLIC        TKTM
+  X:0068H         PUBLIC        MultipleDealIndex
+  C:0100H         PUBLIC        _SensorRenovate
+  B:0020H.1       PUBLIC        bNeedUpdate
+  C:0B23H         PUBLIC        TouchKeyInit
+  C:05D8H         PUBLIC        _MultipleDeal
+  D:0029H         PUBLIC        CurrentChannelMax
+  C:0EE3H         PUBLIC        _Usdelay
+  C:08E3H         PUBLIC        _FilterDataDeal
+  X:0069H         PUBLIC        CurrentIndex
+  C:0E8EH         PUBLIC        FilterIIRInit
+  C:0AA9H         PUBLIC        TouchKey_Service
+  C:0F5CH         PUBLIC        GetIsNeedUpdateBaseline
+  X:006AH         PUBLIC        IsInNosicValue
+  C:0E20H         PUBLIC        FilterCommCode
+  C:06F7H         SYMBOL        Com00A2
+  C:06F7H         SYMBOL        L?0163
+  C:0705H         SYMBOL        L?0164
+  C:0707H         SYMBOL        L?0165
+  C:070AH         SYMBOL        L?0166
+  C:0710H         SYMBOL        L?0167
+  C:0710H         SYMBOL        L?0168
+  C:0712H         SYMBOL        L?0169
+  C:0715H         SYMBOL        L?0170
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 13
+
+
+  C:071BH         SYMBOL        L?0171
+  C:071BH         SYMBOL        L?0172
+  C:071DH         SYMBOL        L?0173
+  C:0726H         SYMBOL        L?0174
+  C:0726H         SYMBOL        L?0175
+  C:072AH         SYMBOL        L?0176
+  C:0732H         SYMBOL        L?0177
+  C:0732H         SYMBOL        L?0178
+  C:0733H         SYMBOL        L?0179
+  C:0737H         SYMBOL        L?0180
+  C:0740H         SYMBOL        L?0181
+  C:0740H         SYMBOL        L?0182
+  C:0744H         SYMBOL        L?0183
+  C:074CH         SYMBOL        L?0184
+  C:074DH         SYMBOL        L?0185
+  C:074EH         SYMBOL        L?0186
+  C:074FH         SYMBOL        L?0187
+  C:0759H         SYMBOL        L?0188
+  C:0759H         SYMBOL        L?0189
+  C:075DH         SYMBOL        L?0190
+  C:0765H         SYMBOL        L?0191
+  C:0767H         SYMBOL        L?0192
+  C:0768H         SYMBOL        L?0193
+  C:0774H         SYMBOL        L?0194
+  C:0774H         SYMBOL        L?0195
+  C:0776H         SYMBOL        L?0196
+  C:0779H         SYMBOL        L?0197
+  C:077FH         SYMBOL        L?0198
+  C:077FH         SYMBOL        L?0199
+  C:0791H         SYMBOL        L?0200
+  C:0793H         SYMBOL        L?0201
+  C:0797H         SYMBOL        L?0202
+  C:07A0H         SYMBOL        L?0203
+  C:07B5H         SYMBOL        L?0204
+  C:07C9H         SYMBOL        L?0205
+  C:07CDH         SYMBOL        L?0206
+  C:07D5H         SYMBOL        L?0207
+  C:07D5H         SYMBOL        L?0208
+  C:07DEH         SYMBOL        L?0209
+  C:07ECH         SYMBOL        L?0210
+  C:07F8H         SYMBOL        L?0211
+  C:07F8H         SYMBOL        L?0212
+  C:07FFH         SYMBOL        L?0213
+  C:080CH         SYMBOL        L?0214
+  -------         PROC          COM00A2
+  -------         ENDPROC       COM00A2
+  -------         PROC          _USDELAY
+  D:0006H         SYMBOL        delay
+  C:0EE3H         LINE#         122
+  C:0EE3H         LINE#         123
+  C:0EE3H         LINE#         124
+  C:0EE7H         LINE#         125
+  C:0EE7H         LINE#         126
+  C:0EECH         LINE#         127
+  C:0EEEH         LINE#         128
+  -------         ENDPROC       _USDELAY
+  -------         PROC          _ICHAADJUST
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 14
+
+
+  D:001BH         SYMBOL        Channel
+  -------         DO            
+  X:006BH         SYMBOL        icha_set
+  -------         ENDDO         
+  C:0A2AH         LINE#         136
+  C:0A2CH         LINE#         137
+  C:0A2CH         LINE#         139
+  C:0A34H         LINE#         140
+  C:0A59H         LINE#         141
+  C:0A59H         LINE#         142
+  C:0A5FH         LINE#         143
+  C:0A5FH         LINE#         144
+  C:0A60H         LINE#         145
+  C:0A60H         LINE#         146
+  C:0A60H         LINE#         147
+  C:0A62H         LINE#         148
+  C:0A8DH         LINE#         149
+  C:0A8DH         LINE#         150
+  C:0A96H         LINE#         151
+  C:0A96H         LINE#         152
+  C:0AA6H         LINE#         153
+  C:0AA8H         LINE#         154
+  C:0AA8H         LINE#         155
+  C:0AA8H         LINE#         156
+  -------         ENDPROC       _ICHAADJUST
+  -------         PROC          TOUCHKEY_SERVICE
+  -------         DO            
+  B:0020H.2       SYMBOL        Scanflag
+  -------         ENDDO         
+  C:0AA9H         LINE#         164
+  C:0AA9H         LINE#         165
+  C:0AA9H         LINE#         166
+  C:0AABH         LINE#         168
+  C:0AB9H         LINE#         169
+  C:0ABFH         LINE#         171
+  C:0AC5H         LINE#         172
+  C:0AC5H         LINE#         173
+  C:0AC7H         LINE#         174
+  C:0ACEH         LINE#         175
+  C:0AD0H         LINE#         177
+  C:0AD0H         LINE#         178
+  C:0AD2H         LINE#         179
+  C:0AD2H         LINE#         180
+  C:0ADDH         LINE#         181
+  C:0AE5H         LINE#         182
+  C:0AFCH         LINE#         183
+  C:0B0BH         LINE#         184
+  C:0B1DH         LINE#         186
+  C:0B22H         LINE#         188
+  -------         ENDPROC       TOUCHKEY_SERVICE
+  -------         PROC          TOUCHKEYINIT
+  C:0B23H         LINE#         197
+  C:0B23H         LINE#         198
+  C:0B23H         LINE#         199
+  C:0B26H         LINE#         200
+  C:0B29H         LINE#         202
+  C:0B2BH         LINE#         204
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 15
+
+
+  C:0B2DH         LINE#         205
+  C:0B32H         LINE#         206
+  C:0B36H         LINE#         208
+  C:0B39H         LINE#         209
+  C:0B54H         LINE#         210
+  C:0B59H         LINE#         212
+  C:0B70H         LINE#         213
+  C:0B78H         LINE#         214
+  C:0B78H         LINE#         215
+  C:0B80H         LINE#         217
+  C:0B80H         LINE#         218
+  C:0B87H         LINE#         220
+  C:0B8AH         LINE#         221
+  C:0B8DH         LINE#         223
+  C:0B95H         LINE#         224
+  C:0B98H         LINE#         225
+  -------         ENDPROC       TOUCHKEYINIT
+  -------         PROC          TOUCHKEYRESTART
+  C:0F59H         LINE#         235
+  C:0F59H         LINE#         236
+  C:0F59H         LINE#         237
+  C:0F5BH         LINE#         238
+  -------         ENDPROC       TOUCHKEYRESTART
+  -------         PROC          FILTERCOMMCODE
+  -------         DO            
+  D:0005H         SYMBOL        times
+  -------         ENDDO         
+  C:0E20H         LINE#         247
+  C:0E20H         LINE#         248
+  C:0E20H         LINE#         249
+  C:0E22H         LINE#         251
+  C:0E29H         LINE#         252
+  C:0E2BH         LINE#         254
+  C:0E32H         LINE#         255
+  C:0E32H         LINE#         256
+  C:0E39H         LINE#         257
+  C:0E3CH         LINE#         258
+  C:0E3DH         LINE#         259
+  C:0E43H         LINE#         260
+  C:0E44H         LINE#         262
+  -------         ENDPROC       FILTERCOMMCODE
+  -------         PROC          FILTERAVERGEDEAL
+  -------         DO            
+  D:0008H         SYMBOL        t
+  D:0009H         SYMBOL        i
+  -------         ENDDO         
+  C:0BFBH         LINE#         271
+  C:0BFBH         LINE#         272
+  C:0BFBH         LINE#         275
+  C:0BFEH         LINE#         277
+  C:0BFEH         LINE#         278
+  C:0C01H         LINE#         279
+  C:0C0BH         LINE#         280
+  C:0C0BH         LINE#         281
+  C:0C1DH         LINE#         282
+  C:0C22H         LINE#         283
+  C:0C26H         LINE#         284
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 16
+
+
+  C:0C2DH         LINE#         285
+  C:0C30H         LINE#         287
+  C:0C35H         LINE#         289
+  C:0C35H         LINE#         290
+  C:0C38H         LINE#         291
+  C:0C42H         LINE#         292
+  C:0C42H         LINE#         293
+  C:0C47H         LINE#         294
+  C:0C4BH         LINE#         295
+  C:0C52H         LINE#         296
+  -------         ENDPROC       FILTERAVERGEDEAL
+  -------         PROC          INITIALIZEBASELINES
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0E6AH         LINE#         305
+  C:0E6AH         LINE#         306
+  C:0E6AH         LINE#         308
+  C:0E72H         LINE#         309
+  C:0E72H         LINE#         310
+  C:0E8AH         LINE#         311
+  C:0E8DH         LINE#         312
+  -------         ENDPROC       INITIALIZEBASELINES
+  -------         PROC          SENSORKEYFLAG
+  -------         DO            
+  D:0011H         SYMBOL        i
+  -------         ENDDO         
+  C:0E45H         LINE#         321
+  C:0E45H         LINE#         322
+  C:0E45H         LINE#         325
+  C:0E4AH         LINE#         326
+  C:0E53H         LINE#         327
+  C:0E53H         LINE#         328
+  C:0E58H         LINE#         329
+  C:0E5DH         LINE#         330
+  C:0E61H         LINE#         331
+  C:0E69H         LINE#         332
+  -------         ENDPROC       SENSORKEYFLAG
+  -------         PROC          _SENSORRENOVATE
+  D:0012H         SYMBOL        i
+  -------         DO            
+  D:0013H         SYMBOL        differData
+  D:0015H         SYMBOL        result
+  D:0016H         SYMBOL        j
+  D:0017H         SYMBOL        RealConfirmTouchCnt
+  D:0018H         SYMBOL        SetFingerThresholdtmp
+  D:001AH         SYMBOL        testcount
+  -------         ENDDO         
+  C:0100H         LINE#         341
+  C:0102H         LINE#         342
+  C:0102H         LINE#         348
+  C:0105H         LINE#         350
+  C:011DH         LINE#         353
+  C:0132H         LINE#         355
+  C:013BH         LINE#         357
+  C:0147H         LINE#         358
+  C:0147H         LINE#         359
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 17
+
+
+  C:014AH         LINE#         360
+  C:014CH         LINE#         362
+  C:014CH         LINE#         363
+  C:014FH         LINE#         364
+  C:014FH         LINE#         367
+  C:0158H         LINE#         368
+  C:0158H         LINE#         369
+  C:0165H         LINE#         370
+  C:0165H         LINE#         371
+  C:016FH         LINE#         372
+  C:016FH         LINE#         374
+  C:0180H         LINE#         375
+  C:0180H         LINE#         376
+  C:0186H         LINE#         377
+  C:018CH         LINE#         378
+  C:018CH         LINE#         379
+  C:018FH         LINE#         380
+  C:0198H         LINE#         381
+  C:0198H         LINE#         382
+  C:01A1H         LINE#         383
+  C:01A3H         LINE#         384
+  C:01A7H         LINE#         385
+  C:01AEH         LINE#         386
+  C:01AEH         LINE#         387
+  C:01B4H         LINE#         388
+  C:01B4H         LINE#         389
+  C:01B4H         LINE#         390
+  C:01C4H         LINE#         391
+  C:01C4H         LINE#         392
+  C:01C7H         LINE#         394
+  C:01CDH         LINE#         395
+  C:01CDH         LINE#         396
+  C:01D6H         LINE#         397
+  C:01D6H         LINE#         398
+  C:01DCH         LINE#         399
+  C:01DCH         LINE#         400
+  C:01E7H         LINE#         401
+  C:01E7H         LINE#         402
+  C:01EAH         LINE#         403
+  C:01ECH         LINE#         404
+  C:01ECH         LINE#         405
+  C:01ECH         LINE#         406
+  C:01F0H         LINE#         407
+  C:01F6H         LINE#         408
+  C:01F6H         LINE#         409
+  C:01FAH         LINE#         410
+  C:01FAH         LINE#         411
+  C:0203H         LINE#         412
+  C:0203H         LINE#         413
+  C:0209H         LINE#         414
+  C:0209H         LINE#         415
+  C:0218H         LINE#         416
+  C:0218H         LINE#         417
+  C:0218H         LINE#         418
+  C:021AH         LINE#         419
+  C:021AH         LINE#         420
+  C:021AH         LINE#         421
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 18
+
+
+  C:021EH         LINE#         422
+  C:021EH         LINE#         423
+  C:021EH         LINE#         424
+  C:021EH         LINE#         426
+  C:021EH         LINE#         427
+  C:0224H         LINE#         428
+  C:0224H         LINE#         429
+  C:0226H         LINE#         430
+  C:022FH         LINE#         431
+  C:022FH         LINE#         432
+  C:0238H         LINE#         433
+  C:0238H         LINE#         434
+  C:023AH         LINE#         435
+  C:023AH         LINE#         436
+  C:023EH         LINE#         437
+  C:0245H         LINE#         438
+  C:0245H         LINE#         439
+  C:0248H         LINE#         440
+  C:0248H         LINE#         441
+  C:0248H         LINE#         442
+  C:0248H         LINE#         444
+  C:024DH         LINE#         445
+  C:024DH         LINE#         446
+  C:024FH         LINE#         447
+  C:024FH         LINE#         448
+  C:026AH         LINE#         449
+  C:026AH         LINE#         450
+  C:026AH         LINE#         453
+  C:026FH         LINE#         454
+  C:0274H         LINE#         455
+  C:027BH         LINE#         456
+  C:0284H         LINE#         457
+  C:0287H         LINE#         460
+  C:0287H         LINE#         461
+  C:0291H         LINE#         462
+  C:0291H         LINE#         463
+  C:0291H         LINE#         464
+  C:0291H         LINE#         465
+  C:0297H         LINE#         466
+  C:0297H         LINE#         467
+  C:0299H         LINE#         469
+  C:0299H         LINE#         470
+  C:029FH         LINE#         471
+  C:02A4H         LINE#         472
+  C:02A4H         LINE#         474
+  C:02BDH         LINE#         475
+  C:02BDH         LINE#         476
+  C:02C1H         LINE#         477
+  C:02C4H         LINE#         478
+  C:02CCH         LINE#         479
+  C:02CCH         LINE#         480
+  C:02D7H         LINE#         481
+  C:02E7H         LINE#         482
+  C:02E7H         LINE#         483
+  C:02EEH         LINE#         484
+  C:02EEH         LINE#         485
+  C:02F0H         LINE#         486
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 19
+
+
+  C:030AH         LINE#         487
+  C:030AH         LINE#         488
+  C:0314H         LINE#         489
+  C:031BH         LINE#         490
+  C:031BH         LINE#         491
+  C:031BH         LINE#         492
+  C:031EH         LINE#         493
+  C:0339H         LINE#         494
+  C:0339H         LINE#         495
+  C:033CH         LINE#         496
+  C:0341H         LINE#         497
+  C:034EH         LINE#         498
+  C:034EH         LINE#         500
+  C:0354H         LINE#         501
+  C:0354H         LINE#         502
+  C:0359H         LINE#         503
+  C:035BH         LINE#         504
+  C:0360H         LINE#         505
+  C:0362H         LINE#         507
+  C:0362H         LINE#         508
+  C:0385H         LINE#         509
+  C:0385H         LINE#         510
+  C:0385H         LINE#         511
+  C:038DH         LINE#         512
+  C:038DH         LINE#         513
+  C:0390H         LINE#         514
+  C:0390H         LINE#         515
+  C:0393H         LINE#         516
+  C:039BH         LINE#         517
+  C:039BH         LINE#         518
+  C:039EH         LINE#         519
+  C:03A3H         LINE#         520
+  C:03A3H         LINE#         521
+  C:03A6H         LINE#         522
+  C:03ADH         LINE#         523
+  C:03ADH         LINE#         524
+  C:03B2H         LINE#         525
+  C:03CAH         LINE#         526
+  C:03CAH         LINE#         527
+  C:03CAH         LINE#         528
+  C:03CAH         LINE#         531
+  C:03D5H         LINE#         532
+  C:03D5H         LINE#         533
+  C:03F3H         LINE#         534
+  C:03F3H         LINE#         535
+  C:03F9H         LINE#         536
+  C:03FEH         LINE#         537
+  C:0408H         LINE#         538
+  C:0408H         LINE#         539
+  C:0411H         LINE#         540
+  C:0413H         LINE#         541
+  C:0417H         LINE#         542
+  C:041EH         LINE#         543
+  C:041EH         LINE#         544
+  C:0424H         LINE#         545
+  C:0424H         LINE#         546
+  C:042DH         LINE#         547
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 20
+
+
+  C:042DH         LINE#         548
+  C:0432H         LINE#         549
+  C:0454H         LINE#         550
+  C:0461H         LINE#         551
+  C:0461H         LINE#         552
+  C:0462H         LINE#         554
+  C:0462H         LINE#         555
+  C:0468H         LINE#         556
+  C:0468H         LINE#         557
+  C:0469H         LINE#         559
+  C:0469H         LINE#         560
+  C:0470H         LINE#         562
+  C:0475H         LINE#         563
+  C:0475H         LINE#         564
+  C:047AH         LINE#         565
+  C:047AH         LINE#         567
+  C:0481H         LINE#         568
+  C:0481H         LINE#         570
+  C:0481H         LINE#         572
+  C:048AH         LINE#         573
+  C:048AH         LINE#         575
+  C:048AH         LINE#         577
+  C:0494H         LINE#         578
+  C:0494H         LINE#         579
+  C:049AH         LINE#         580
+  C:049AH         LINE#         581
+  C:049DH         LINE#         582
+  C:049DH         LINE#         583
+  C:04A1H         LINE#         584
+  C:04A5H         LINE#         585
+  C:04A5H         LINE#         586
+  C:04A7H         LINE#         587
+  C:04A7H         LINE#         588
+  C:04A7H         LINE#         590
+  C:04A7H         LINE#         591
+  -------         ENDPROC       _SENSORRENOVATE
+  -------         PROC          FILTERIIRINIT
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0E8EH         LINE#         599
+  C:0E8EH         LINE#         600
+  C:0E8EH         LINE#         602
+  C:0E96H         LINE#         603
+  C:0E96H         LINE#         604
+  C:0EABH         LINE#         605
+  C:0EAEH         LINE#         606
+  -------         ENDPROC       FILTERIIRINIT
+  -------         PROC          _FILTERDATADEAL
+  D:0013H         SYMBOL        i
+  -------         DO            
+  D:0014H         SYMBOL        FilterTemp
+  D:0004H         SYMBOL        SetFingerThresholdtmp
+  -------         ENDDO         
+  C:08E3H         LINE#         615
+  C:08E5H         LINE#         616
+  C:08E5H         LINE#         620
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 21
+
+
+  C:08F2H         LINE#         622
+  C:08FBH         LINE#         624
+  C:0910H         LINE#         625
+  C:0910H         LINE#         626
+  C:0918H         LINE#         627
+  C:091BH         LINE#         628
+  C:0934H         LINE#         629
+  C:0934H         LINE#         630
+  C:0959H         LINE#         631
+  C:095BH         LINE#         633
+  C:095BH         LINE#         634
+  C:0993H         LINE#         635
+  C:0993H         LINE#         637
+  C:099DH         LINE#         638
+  -------         ENDPROC       _FILTERDATADEAL
+  -------         PROC          GETISNEEDUPDATEBASELINE
+  C:0F5CH         LINE#         647
+  C:0F5CH         LINE#         648
+  C:0F5CH         LINE#         649
+  C:0F5EH         LINE#         650
+  -------         ENDPROC       GETISNEEDUPDATEBASELINE
+  -------         PROC          SETNEEDUPDATEBASELINE
+  C:0F5FH         LINE#         659
+  C:0F5FH         LINE#         660
+  C:0F5FH         LINE#         661
+  C:0F61H         LINE#         662
+  -------         ENDPROC       SETNEEDUPDATEBASELINE
+  -------         PROC          INITIALIZESENSORFLAG
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0CF9H         LINE#         671
+  C:0CF9H         LINE#         672
+  C:0CF9H         LINE#         674
+  C:0D01H         LINE#         675
+  C:0D01H         LINE#         676
+  C:0D09H         LINE#         677
+  C:0D11H         LINE#         678
+  C:0D19H         LINE#         679
+  C:0D21H         LINE#         680
+  C:0D29H         LINE#         681
+  C:0D2CH         LINE#         683
+  C:0D35H         LINE#         684
+  C:0D3BH         LINE#         685
+  C:0D42H         LINE#         686
+  C:0D44H         LINE#         687
+  -------         ENDPROC       INITIALIZESENSORFLAG
+  -------         PROC          _MULTIPLEDEAL
+  D:0011H         SYMBOL        CycleCnt
+  -------         DO            
+  X:0062H         SYMBOL        InitSensorCnt
+  D:0004H         SYMBOL        FilterTemp
+  D:0012H         SYMBOL        t
+  -------         ENDDO         
+  C:05D8H         LINE#         696
+  C:05DAH         LINE#         697
+  C:05DAH         LINE#         703
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 22
+
+
+  C:05E3H         LINE#         704
+  C:05E3H         LINE#         705
+  C:05E5H         LINE#         706
+  C:05EBH         LINE#         707
+  C:05EBH         LINE#         708
+  C:05F4H         LINE#         709
+  C:05F4H         LINE#         710
+  C:0609H         LINE#         711
+  C:060DH         LINE#         712
+  C:060DH         LINE#         713
+  C:0610H         LINE#         714
+  C:0612H         LINE#         715
+  C:0618H         LINE#         717
+  C:0618H         LINE#         719
+  C:061EH         LINE#         720
+  C:0622H         LINE#         721
+  C:0622H         LINE#         722
+  C:0625H         LINE#         723
+  C:062AH         LINE#         724
+  C:062AH         LINE#         726
+  C:0636H         LINE#         727
+  C:0636H         LINE#         728
+  C:0640H         LINE#         729
+  C:0640H         LINE#         730
+  C:0659H         LINE#         731
+  C:065FH         LINE#         732
+  C:065FH         LINE#         733
+  C:0686H         LINE#         734
+  C:0688H         LINE#         737
+  C:0688H         LINE#         738
+  C:06B0H         LINE#         739
+  C:06B0H         LINE#         740
+  C:06B0H         LINE#         741
+  C:06B5H         LINE#         742
+  C:06BAH         LINE#         744
+  C:06BFH         LINE#         745
+  C:06BFH         LINE#         746
+  C:06C5H         LINE#         747
+  C:06C5H         LINE#         749
+  C:06D2H         LINE#         750
+  C:06D2H         LINE#         751
+  C:06D4H         LINE#         752
+  C:06D6H         LINE#         753
+  C:06DCH         LINE#         754
+  C:06E9H         LINE#         755
+  C:06E9H         LINE#         756
+  C:06EEH         LINE#         757
+  C:06F1H         LINE#         758
+  C:06F4H         LINE#         759
+  C:06F6H         LINE#         760
+  C:06F6H         LINE#         761
+  C:06F6H         LINE#         762
+  C:06F6H         LINE#         763
+  -------         ENDPROC       _MULTIPLEDEAL
+  -------         ENDMOD        SENSORMETHOD
+
+  -------         MODULE        ?C?IMUL
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/24/2019  16:43:36  PAGE 23
+
+
+  C:0816H         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+  -------         MODULE        ?C?UIDIV
+  C:0828H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+  -------         MODULE        ?C?IILDX
+  C:087DH         PUBLIC        ?C?IILDX
+  -------         ENDMOD        ?C?IILDX
+
+  -------         MODULE        ?C?LNOT
+  C:0893H         PUBLIC        ?C?LNOT
+  -------         ENDMOD        ?C?LNOT
+
+  -------         MODULE        ?C?ULCMP
+  C:08A0H         PUBLIC        ?C?ULCMP
+  -------         ENDMOD        ?C?ULCMP
+
+  -------         MODULE        ?C?ULSHR
+  C:08B1H         PUBLIC        ?C?ULSHR
+  -------         ENDMOD        ?C?ULSHR
+
+  -------         MODULE        ?C?LSHL
+  C:08C4H         PUBLIC        ?C?LSHL
+  -------         ENDMOD        ?C?LSHL
+
+  -------         MODULE        ?C?OFFXADD
+  C:08D7H         PUBLIC        ?C?OFFXADD
+  -------         ENDMOD        ?C?OFFXADD
+
+Program Size: data=42.3 xdata=108 code=3688
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
