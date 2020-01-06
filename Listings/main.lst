@@ -1,4 +1,4 @@
-C51 COMPILER V9.59.0.0   MAIN                                                              12/24/2019 16:43:36 PAGE 1   
+C51 COMPILER V9.59.0.0   MAIN                                                              01/06/2020 19:42:18 PAGE 1   
 
 
 C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
@@ -12,89 +12,164 @@ line level    source
    2          #include "SensorMethod.h"
    3          
    4          unsigned long int tk;
-   5          
-   6          void beep(void){
-   7   1          P1&=0xEF;
-   8   1      }
-   9          
-  10          void beepStop(void){
-  11   1          P1|=0x10;
-  12   1      }
-  13          
-  14          void LED1_ON(){
-  15   1          P0&=0xEF;
-  16   1      }
-  17          
-  18          void LED1_OFF(){
-  19   1          P0|=0x10;
-  20   1      }
-  21          
-  22          void LED2_ON(){
-  23   1          P5&=0xFD;
-  24   1      }
-  25          
-  26          void LED2_OFF(){
-  27   1          P5|=0x02;
-  28   1      }
-  29          
-  30          void LED3_ON(){
-  31   1          P1&=0x7F;
-  32   1      }
-  33          
-  34          void LED3_OFF(){
-  35   1          P1|=0x80;
-  36   1      }
-  37          
-  38          void main(void){
-  39   1          P0CON = 0xFF;
-  40   1          P0PH  = 0xFF;       
-  41   1          P1CON = 0xFF;
-  42   1          P1PH  = 0xFF;
-  43   1          P2CON = 0xFF;
-  44   1          P2PH  = 0xFF;
-  45   1          P5CON = 0xFF;
-  46   1          P5PH  = 0xFF;
-  47   1      
-  48   1          P0 = 0xFF;
-  49   1          P1 = 0xFF;
-  50   1          P5 = 0xFF;  
-  51   1              P2 = 0xFF;
-  52   1          EA = 1;
-  53   1          LED1_ON();
-  54   1          LED2_ON();
-C51 COMPILER V9.59.0.0   MAIN                                                              12/24/2019 16:43:36 PAGE 2   
+   5          unsigned long int tick;
+   6          int Status = 0xff;
+   7          int buffer = 0xff;
+   8          
+   9          void beep(void){
+  10   1          P1&=0xEF;
+  11   1      }
+  12          
+  13          void beepStop(void){
+  14   1          P1|=0x10;
+  15   1      }
+  16          
+  17          void LED1_ON(){
+  18   1          P0&=0xEF;
+  19   1      }
+  20          
+  21          void LED1_OFF(){
+  22   1          P0|=0x10;
+  23   1      }
+  24          
+  25          void LED2_ON(){
+  26   1          P5&=0xFD;
+  27   1      }
+  28          
+  29          void LED2_OFF(){
+  30   1          P5|=0x02;
+  31   1      }
+  32          
+  33          void LED3_ON(){
+  34   1          P1&=0x7F;
+  35   1      }
+  36          
+  37          void LED3_OFF(){
+  38   1          P1|=0x80;
+  39   1      }
+  40          
+  41          int SSI_TWI_ReceiveData(void){
+  42   1              return SSDAT;
+  43   1      }
+  44          
+  45          void Sys_init(){
+  46   1          P0CON = 0xFF;
+  47   1          P0PH  = 0xFF;       
+  48   1          P1CON = 0xFF;
+  49   1          P1PH  = 0xFF;
+  50   1          P2CON = 0xFF;
+  51   1          P2PH  = 0xFF;
+  52   1          P5CON = 0xFF;
+  53   1          P5PH  = 0xFF;
+  54   1      
+C51 COMPILER V9.59.0.0   MAIN                                                              01/06/2020 19:42:18 PAGE 2   
 
-  55   1          LED3_ON();
-  56   1          TouchKeyInit();
-  57   1          while(1){
-  58   2              if(SOCAPI_TouchKeyStatus&0x80){
-  59   3                  SOCAPI_TouchKeyStatus&=0x80;
-  60   3                  tk = TouchKeyScan();
-  61   3                  if(tk){
-  62   4                      beep();
-  63   4                      LED1_OFF();
-  64   4                      LED2_OFF();
-  65   4                      LED3_OFF();
-  66   4                  }else{
-  67   4                      beepStop();
-  68   4                      LED1_ON();
-  69   4                      LED2_ON();
-  70   4                      LED3_ON();
-  71   4                  }
-  72   3                      
-  73   3                  
-  74   3                  TouchKeyRestart();
-  75   3              }
-  76   2          }
+  55   1          P0 = 0xFF;
+  56   1          P1 = 0xFF;
+  57   1          P5 = 0xFF;  
+  58   1              P2 = 0xFF;
+  59   1          EA = 1;
+  60   1      }
+  61          
+  62          void Timer_Init(){
+  63   1          TMCON = 0X07;
+  64   1       /* TMOD |= 0x20;            //0010 0000;Timer1设置工作方式2
+  65   1              TL1 = 256 - 240;   //溢出时间：时钟为Fsys，则240*（1/Fsys）=20us;
+  66   1              TH1 = 256 - 240;
+  67   1              TR1 = 0;
+  68   1              ET1 = 1;//定时器1,inturrupt允许
+  69   1              TR1 = 1;//打开定时器1*/
+  70   1      
+  71   1          TMOD |= 0x01;                 //0000 0001;Timer0设置工作方式1
+  72   1              TL0 = (65536 - 12000)%256;    //溢出时间：时钟为Fsys，则12000*（1/Fsys）=1ms;
+  73   1              TH0 = (65536 - 12000)/256;
+  74   1              TR0 = 0;
+  75   1              ET0 = 1;//定时器0允许
+  76   1              TR0 = 1;//打开定时器0
   77   1      }
+  78          
+  79          void TWI_Init(void){
+  80   1              OTCON |= 0x80;  //选择TWI模式
+  81   1              SSCON0 = 0x88;  // ---- x---  0为不允许接收，1为允许接收
+  82   1              SSCON1 = 0x03;  //xxxx xxxy  x为地址寄存器，y为0禁止/1允许通用地址响应
+  83   1          IE1 |= 0x01;
+  84   1      }
+  85          
+  86          void main(void){
+  87   1          Sys_init();    
+  88   1          LED1_OFF();
+  89   1          LED2_ON();
+  90   1          LED3_ON();
+  91   1          TWI_Init();
+  92   1          Timer_Init();    
+  93   1          TouchKeyInit();
+  94   1          while(1){
+  95   2              if(SOCAPI_TouchKeyStatus&0x80){
+  96   3                  SOCAPI_TouchKeyStatus&=0x80;
+  97   3                  tk = TouchKeyScan();
+  98   3                  if(tk){
+  99   4                      beep();
+ 100   4                      LED2_OFF();
+ 101   4                  }else{
+ 102   4                      beepStop();
+ 103   4                      LED2_ON();
+ 104   4                  }
+ 105   3                  TouchKeyRestart();
+ 106   3              }
+ 107   2          }
+ 108   1      }
+ 109          
+ 110          void timer0() interrupt 1{
+ 111   1          TL0 = (65536 - 12000)%256;
+ 112   1              TH0 = (65536 - 12000)/256;
+ 113   1          tick+=1;
+ 114   1              if(tick>=1000){ //isec
+ 115   2              tick=0;
+ 116   2              P04 = ~P04;       
+C51 COMPILER V9.59.0.0   MAIN                                                              01/06/2020 19:42:18 PAGE 3   
+
+ 117   2          }
+ 118   1      }
+ 119          
+ 120          void timer1() interrupt 3{
+ 121   1          tick+=1;
+ 122   1          if(tick>=50000){
+ 123   2              tick=0;
+ 124   2              P04 = ~P04;       
+ 125   2          }        
+ 126   1      }
+ 127          
+ 128          void TWI_Int() interrupt 7{
+ 129   1              if(SSCON0&0x40){
+ 130   2                      SSCON0 &= 0xbf;  //中断清零   
+ 131   2              Status = SSCON0 & 0X07;    //获取TWI状态码
+ 132   2              switch(Status){
+ 133   3                  case 0x00:                     //接收到主机STOP信号                
+ 134   3                  break;
+ 135   3                  case 0x02:                     //接收到主机地址帧或数据帧
+ 136   3                  if(SSI_TWI_ReceiveData()){
+ 137   4                      buffer=SSI_TWI_ReceiveData();
+ 138   4                  }                
+ 139   3                  break;
+ 140   3                  case 0x03:                          //从机发送完一帧数据                
+ 141   3                  break;
+ 142   3                  case 0x04:                          //等待RESTART或STOP
+ 143   3                  break;
+ 144   3                  case 0x05:                          //等待RESTART或STOP
+ 145   3                  break;
+ 146   3                  default:
+ 147   3                  break;
+ 148   3              }               
+ 149   2              }       
+ 150   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    134    ----
+   CODE SIZE        =    466    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =      4    ----
+   DATA SIZE        =     12    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

@@ -1,4 +1,4 @@
-C51 COMPILER V9.59.0.0   S_TOUCHKEYCFG                                                     12/24/2019 16:43:36 PAGE 1   
+C51 COMPILER V9.59.0.0   S_TOUCHKEYCFG                                                     01/06/2020 19:42:18 PAGE 1   
 
 
 C51 COMPILER V9.59.0.0, COMPILATION OF MODULE S_TOUCHKEYCFG
@@ -62,7 +62,7 @@ line level    source
   52          extern  void TouchKey_Service(void);
   53          
   54          /***************弹簧库独有***************/
-C51 COMPILER V9.59.0.0   S_TOUCHKEYCFG                                                     12/24/2019 16:43:36 PAGE 2   
+C51 COMPILER V9.59.0.0   S_TOUCHKEYCFG                                                     01/06/2020 19:42:18 PAGE 2   
 
   55          #define         SOCAPI_SET_CS_FUNCTION                                          1               //0:表示不进行CS测试,1: 表示进行CS测试,默认0
   56          #define         SOCAPI_INHIBITION_ZONE                                      8           //抑制区间%，设置范围5-10，默认7,即（7*10）%=70% ，连水时加大该
@@ -126,7 +126,7 @@ line level    source
  113          *函数名称：unsigned char GetInitAutoUpdateTime(void)
  114          *函数功能：初始化自动校准次数
  115          *入口参数：void
-C51 COMPILER V9.59.0.0   S_TOUCHKEYCFG                                                     12/24/2019 16:43:36 PAGE 3   
+C51 COMPILER V9.59.0.0   S_TOUCHKEYCFG                                                     01/06/2020 19:42:18 PAGE 3   
 
  116          *出口参数：unsigned  char 
  117          *备注    ：
@@ -190,7 +190,7 @@ line level    source
  175          **************************************************/
  176          unsigned char  GetBaseLineAdjustValue(unsigned char i)
  177          {       
-C51 COMPILER V9.59.0.0   S_TOUCHKEYCFG                                                     12/24/2019 16:43:36 PAGE 4   
+C51 COMPILER V9.59.0.0   S_TOUCHKEYCFG                                                     01/06/2020 19:42:18 PAGE 4   
 
  178   1           return BaseLineAdjusttmp[i]; 
  179   1      }
@@ -254,7 +254,7 @@ line level    source
  237   2                      CurrentSensorKey=CurrentSensorKey>>1;
  238   2                      if(TK_CY)
  239   2                      {
-C51 COMPILER V9.59.0.0   S_TOUCHKEYCFG                                                     12/24/2019 16:43:36 PAGE 5   
+C51 COMPILER V9.59.0.0   S_TOUCHKEYCFG                                                     01/06/2020 19:42:18 PAGE 5   
 
  240   3                              CurrentChannel[Ctk_Channel_mark] = i;                                           //选择触摸当前的通道
  241   3                              Ctk_Channel_mark++;
@@ -318,7 +318,7 @@ line level    source
  299          unsigned long int TouchKeyScan(void)
  300          {
  301   1              unsigned char t;
-C51 COMPILER V9.59.0.0   S_TOUCHKEYCFG                                                     12/24/2019 16:43:36 PAGE 6   
+C51 COMPILER V9.59.0.0   S_TOUCHKEYCFG                                                     01/06/2020 19:42:18 PAGE 6   
 
  302   1          unsigned char MultipleCnt = 0;//按键计数
  303   1              unsigned long int Keyvalue = 0; 
@@ -382,7 +382,7 @@ line level    source
  360   3                              SetNeedUpdateBaseline(); 
  361   3                              MultipleDealTpye = 1; 
  362   3                              MultipleLNum = 0;
-C51 COMPILER V9.59.0.0   S_TOUCHKEYCFG                                                     12/24/2019 16:43:36 PAGE 7   
+C51 COMPILER V9.59.0.0   S_TOUCHKEYCFG                                                     01/06/2020 19:42:18 PAGE 7   
 
  363   3                      }  
  364   2              }                       
